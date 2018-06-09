@@ -2,7 +2,7 @@
 
 Youtube forces to authenticate to be able to see some videos with content for adults, this is sometimes very annoying in my opinion. Not everyone has a google account or has an open session.
 
-This authentication in google is not mandatory when videos are embedded with iframes. This function simply creates an iframe in a temporary file in / tmp / and starts the browser / opens a tab with the video.
+This authentication in google is not mandatory when videos are embedded with iframes. This function simply creates an iframe in a temporary file in /tmp and starts the browser or opens a tab with the video.
 
 Print the iframe in the output (you could direct it to a file to read it with a browser).
 ```bash
