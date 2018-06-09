@@ -13,12 +13,12 @@ function nsfw() {
 
 Create a temporary file with the iframe and start the firefox browser (it would work with any other browser).
 ```bash
-function nsfw_firefox { 
+function nsfw_firefox() { 
   echo "<iframe width='560' height='315' src='https://www.youtube.com/embed/${1#*v=}' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>" > /tmp/${1#*v=}.htm && firefox /tmp/${1#*v=}.htm;
 }
 ```
 
 Add the function to any .bashrc file to have the command at any time. You simply have to pass the URL as a parameter.
-```bash
+```
 nsfw_firefox https://www.youtube.com/watch?v=v8jC1NcE_2w
 ```
