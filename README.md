@@ -27,7 +27,7 @@ nsfw_firefox https://www.youtube.com/watch?v=v8jC1NcE_2w
 
 ## youtube-dl / mplayer / VLC
 
-youtube-dl sends the youtube video (+ audio ;D) to the standard input and the player receives it to start playing it. Going forward, backward, pausing, etc is supported.
+youtube-dl sends the youtube video (+ audio ;D) to the standard input and the player receives it to start playing it.
 
 ```bash
 # mplayer
