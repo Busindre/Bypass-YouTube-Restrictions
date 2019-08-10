@@ -1,8 +1,10 @@
-# Bypass YouTube-Restrictions (Bash function).
+# Bypass YouTube-Restrictions (Bash function / youtube-dl).
 
 Youtube requires you to authenticate to be able to see some videos with rated content, This may be very annoying. Not everyone has a Google account or has an open session.
 
 This authentication in google is not mandatory when videos are embedded within iframes. This function simply creates an iframe in a temporary file in /tmp and starts the browser or opens a tab with the selected video.
+
+## Browser
 
 Print the iframe in the output (you could direct it to a file to read it with a browser).
 ```bash
@@ -21,4 +23,21 @@ function nsfw_firefox() {
 Add the function to any .bashrc file to have the command available whenever you need it. You simply have to pass the desired youtube URL as a parameter.
 ```
 nsfw_firefox https://www.youtube.com/watch?v=v8jC1NcE_2w
+```
+
+## youtube-dl / mplayer / VLC
+
+youtube-dl sends the youtube video (+ audio ;D) to the standard input and the player receives it to start playing it. Going forward, backward, pausing, etc. is logically supported.
+
+```bash
+# mplayer
+function nsfw_terminal () { youtube-dl --quiet -i -o - "$1" | mplayer -really-quiet -; }
+
+# VLC
+function nsfw_terminal () { youtube-dl --quiet -i -o - "$1" | vlc -; }
+```
+
+Add the bash-function to any .bashrc file to have the command available whenever you need it. You simply have to pass the desired youtube URL as a parameter.
+```
+nsfw_terminal https://www.youtube.com/watch?v=fDYPu20pnBI
 ```
